@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir scanbuild
           cd scanbuild
-          scan-build-19 cmake ..
+          scan-build-19 cmake -DCMAKE_BUILD_TYPE=Debug ..
       - name: make
         working-directory: ./scanbuild
         run: scan-build-19 -o scanbuild-report make -j6 | tee scanbuild-output.txt
